@@ -45,6 +45,21 @@ some_not_prime_numbers = [
     n for n in range(max(some_prime_numbers)) if n not in some_prime_numbers
 ]
 
+some_numbers_with_some_equal_digits = some_circular_prime_numbers[-8:]
+
+some_numbers_which_all_digits_are_different = [
+    12345,
+    2548,
+    65478,
+    12369,
+    9856,
+    145789,
+    2,
+    48,
+    0,
+    6587123,
+]
+
 
 @pytest.fixture(scope="session", params=some_circular_prime_numbers)
 def circular_prime_number(request):
@@ -69,4 +84,20 @@ def not_prime_number(request):
     params=some_not_circular_prime_numbers_but_primes + some_not_prime_numbers,
 )
 def not_circular_prime_number(request):
+    return request.param
+
+
+@pytest.fixture(
+    scope="session",
+    params=some_numbers_which_all_digits_are_different,
+)
+def number_which_all_digits_are_different(request):
+    return request.param
+
+
+@pytest.fixture(
+    scope="session",
+    params=some_numbers_with_some_equal_digits,
+)
+def number_with_some_equal_digits(request):
     return request.param
