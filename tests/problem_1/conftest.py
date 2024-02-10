@@ -1,4 +1,5 @@
 import pytest
+import requests
 
 from src.problem_1.exercise_10 import ShoppingCart, Product
 from src.problem_1.exercise_8 import User
@@ -244,3 +245,16 @@ def setup_shopping_cart():
     orange = Product("Orange", 1.49, 8)
     pineapple = Product("Pineapple", 2.99, 3)
     return cart, apple, banana, orange, pineapple
+
+
+@pytest.fixture
+def mock_response():
+    response = requests.Response()
+    response.status_code = 200
+    response._content = b"Mock content"
+    return response
+
+@pytest.fixture(scope="session")
+def test_url():
+    return "https://jsonplaceholder.typicode.com/posts/1"
+
