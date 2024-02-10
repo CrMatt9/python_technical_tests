@@ -181,3 +181,35 @@ some_lists_zeros_and_ones = [
 )
 def list_zeros_and_ones(request):
     return request.param
+
+
+some_computer_params = [
+    ("Dell", "Power", "Brand: Dell, Model: Power"),
+    ("HP", "Gaming", "Brand: HP, Model: Gaming"),
+    ("Asus", "ZenBook", "Brand: Asus, Model: ZenBook"),
+    ("Lenovo", "ThinkPad", "Brand: Lenovo, Model: ThinkPad"),
+    ("Acer", "Swift", "Brand: Acer, Model: Swift"),
+]
+
+
+some_desktop_params = [
+    ("Dell", "Power", 10, "Brand: Dell, Model: Power, CPU Volume: 10 L"),
+    ("HP", "Gaming", 15, "Brand: HP, Model: Gaming, CPU Volume: 15 L"),
+    ("Asus", "ZenBook", 8, "Brand: Asus, Model: ZenBook, CPU Volume: 8 L"),
+    ("Lenovo", "ThinkPad", 12, "Brand: Lenovo, Model: ThinkPad, CPU Volume: 12 L"),
+    ("Acer", "Swift", 6, "Brand: Acer, Model: Swift, CPU Volume: 6 L"),
+]
+
+
+some_laptop_params = [
+    ("Dell", "Mini Power", 2, "Brand: Dell, Model: Mini Power, Battery Duration: 2 h"),
+    ("HP", "UltraBook", 5, "Brand: HP, Model: UltraBook, Battery Duration: 5 h"),
+    ("Asus", "ZenBook", 8, "Brand: Asus, Model: ZenBook, Battery Duration: 8 h"),
+    (
+        "Lenovo",
+        "ThinkPad",
+        12,
+        "Brand: Lenovo, Model: ThinkPad, Battery Duration: 12 h",
+    ),
+    ("Acer", "Swift", 6, "Brand: Acer, Model: Swift, Battery Duration: 6 h"),
+]
