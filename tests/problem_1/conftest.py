@@ -1,5 +1,7 @@
 import pytest
 
+from src.problem_1.exercise_8 import User
+
 some_circular_prime_numbers = [
     2,
     5,
@@ -213,3 +215,11 @@ some_laptop_params = [
     ),
     ("Acer", "Swift", 6, "Brand: Acer, Model: Swift, Battery Duration: 6 h"),
 ]
+
+@pytest.fixture(
+    scope="function",
+)
+def setup_users_database():
+    User._total_users = 0
+    yield
+    User._total_users = 0
