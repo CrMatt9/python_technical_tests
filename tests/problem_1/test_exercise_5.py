@@ -3,7 +3,7 @@ from src.problem_1.exercise_5 import max_subsequence_sum
 
 def test_max_subsequence_sum(list_of_ints_and_ts_max_subsequence_sum):
     """
-    Test for the max_subsequence_sum function
+    Test exercise_5.max_subsequence_sum
     GIVEN a list of integers and the expected maximum subsequence sum
     WHEN the max_subsequence_sum function is called with the given list
     THEN it should return the expected maximum subsequence and its sum

@@ -161,3 +161,23 @@ some_lists_of_ints_and_its_max_subsequence_sum = [
 )
 def list_of_ints_and_ts_max_subsequence_sum(request):
     return request.param
+
+
+some_lists_zeros_and_ones = [
+    ([0, 1, 1, 1, 0], [0, 0, 1, 1, 1]),
+    ([1, 1, 1, 1, 1], [1, 1, 1, 1, 1]),
+    ([0, 0, 0, 0, 0], [0, 0, 0, 0, 0]),
+    ([1, 0, 1, 0, 1], [0, 0, 1, 1, 1]),
+    ([0, 0, 1, 1, 0], [0, 0, 0, 1, 1]),
+    ([1, 1, 0, 0, 1], [0, 0, 1, 1, 1]),
+    ([0, 1, 0, 1, 0], [0, 0, 0, 1, 1]),
+    ([1, 0, 1, 0, 0], [0, 0, 0, 1, 1]),
+]
+
+
+@pytest.fixture(
+    scope="session",
+    params=some_lists_zeros_and_ones,
+)
+def list_zeros_and_ones(request):
+    return request.param
