@@ -254,7 +254,7 @@ def mock_response():
     response._content = b"Mock content"
     return response
 
+
 @pytest.fixture(scope="session")
 def test_url():
     return "https://jsonplaceholder.typicode.com/posts/1"
-

@@ -5,11 +5,11 @@ from src.problem_1.exercise_10 import Product
 
 def test_add_item(setup_shopping_cart):
     """
-   Test adding items to the shopping cart.
-   GIVEN a shopping cart and products,
-   WHEN adding items to the cart,
-   THEN the cart should contain the added items with correct quantities.
-   """
+    Test adding items to the shopping cart.
+    GIVEN a shopping cart and products,
+    WHEN adding items to the cart,
+    THEN the cart should contain the added items with correct quantities.
+    """
     cart, apple, banana, _, _ = setup_shopping_cart
     cart.add_item(apple, 3)
     cart.add_item(banana, 2)
