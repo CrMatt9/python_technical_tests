@@ -61,13 +61,15 @@ some_numbers_which_all_digits_are_different = [
 ]
 
 some_string_pairs_with_only_alpha_characters = [
-    ("Hello",
-    "this"),
-    ("is",
-    "my"),
+    ("Hello", "this"),
+    ("is", "my"),
     ("super cool test", "enjoy"),
 ]
-some_pairs_string_with_no_alpha_characters = [("He5l#lo1", "t.his"), ("is,", "m9y"), ("supe123r co$%#ol test", "enjoy!")]
+some_pairs_string_with_no_alpha_characters = [
+    ("He5l#lo1", "t.his"),
+    ("is,", "m9y"),
+    ("supe123r co$%#ol test", "enjoy!"),
+]
 
 
 @pytest.fixture(scope="session", params=some_circular_prime_numbers)
@@ -142,4 +144,20 @@ def string_pair_with_only_alpha_characters(request):
     params=some_pairs_string_with_no_alpha_characters,
 )
 def string_pair_with_no_alpha_characters(request):
+    return request.param
+
+
+some_lists_of_ints_and_its_max_subsequence_sum = [
+    ([1, 2, 3, 4], ([1, 2, 3, 4], 10)),
+    ([-1, -2, -3, -4], ([], 0)),
+    ([-8, -4, 6, 8, -6, 10, -4, -4], ([6, 8, -6, 10], 18)),
+    ([-2, 1, -3, 4, -1, 2, 1, -5, 4], ([4, -1, 2, 1], 6)),
+]
+
+
+@pytest.fixture(
+    scope="session",
+    params=some_lists_of_ints_and_its_max_subsequence_sum,
+)
+def list_of_ints_and_ts_max_subsequence_sum(request):
     return request.param
