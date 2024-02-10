@@ -1,5 +1,6 @@
 import pytest
 
+from src.problem_1.exercise_10 import ShoppingCart, Product
 from src.problem_1.exercise_8 import User
 
 some_circular_prime_numbers = [
@@ -231,3 +232,15 @@ def setup_users_database():
 )
 def tmp_directory(tmpdir):
     return tmpdir.mkdir("test_files")
+
+
+@pytest.fixture(
+    scope="function",
+)
+def setup_shopping_cart():
+    cart = ShoppingCart()
+    apple = Product("Apple", 1.99, 10)
+    banana = Product("Banana", 0.99, 5)
+    orange = Product("Orange", 1.49, 8)
+    pineapple = Product("Pineapple", 2.99, 3)
+    return cart, apple, banana, orange, pineapple
