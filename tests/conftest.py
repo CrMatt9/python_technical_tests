@@ -60,6 +60,15 @@ some_numbers_which_all_digits_are_different = [
     6587123,
 ]
 
+some_string_pairs_with_only_alpha_characters = [
+    ("Hello",
+    "this"),
+    ("is",
+    "my"),
+    ("super cool test", "enjoy"),
+]
+some_pairs_string_with_no_alpha_characters = [("He5l#lo1", "t.his"), ("is,", "m9y"), ("supe123r co$%#ol test", "enjoy!")]
+
 
 @pytest.fixture(scope="session", params=some_circular_prime_numbers)
 def circular_prime_number(request):
@@ -102,10 +111,35 @@ def number_which_all_digits_are_different(request):
 def number_with_some_equal_digits(request):
     return request.param
 
-some_pairs_of_numbers_and_its_mod9 = [(69810, 6), (3201, 6), (89822, 2), (84135, 3), (54571,4)]
+
+some_pairs_of_numbers_and_its_mod9 = [
+    (69810, 6),
+    (3201, 6),
+    (89822, 2),
+    (84135, 3),
+    (54571, 4),
+]
+
+
 @pytest.fixture(
     scope="session",
     params=some_pairs_of_numbers_and_its_mod9,
 )
 def pair_of_number_and_its_mod9(request):
+    return request.param
+
+
+@pytest.fixture(
+    scope="class",
+    params=some_string_pairs_with_only_alpha_characters,
+)
+def string_pair_with_only_alpha_characters(request):
+    return request.param
+
+
+@pytest.fixture(
+    scope="class",
+    params=some_pairs_string_with_no_alpha_characters,
+)
+def string_pair_with_no_alpha_characters(request):
     return request.param
