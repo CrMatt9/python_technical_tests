@@ -70,6 +70,7 @@ def test_remove_item_not_in_cart(setup_shopping_cart):
     with pytest.raises(ValueError, match="Nonexistent not found in the cart."):
         cart.remove_item(Product("Nonexistent", 1.0, 10), 1)
 
+
 def test_display_cart_empty(setup_shopping_cart, capsys):
     """
     Test displaying an empty shopping cart.
