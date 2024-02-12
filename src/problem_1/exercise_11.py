@@ -3,11 +3,11 @@ import time
 from multiprocessing import Pool
 
 
-def make_request(url):
+def make_request(url: str):
     """
     Make an HTTP GET request to the specified URL.
     :param url: The URL to request.
-    :return: True if the request was successful, False otherwise.
+    :return: Response if the request was successful, False otherwise.
     """
     try:
         response = requests.get(url)
@@ -17,7 +17,9 @@ def make_request(url):
         return False
 
 
-def make_some_requests(url, number_of_requests=1000, num_processes=20):
+def make_some_requests(
+    url: str, number_of_requests: int = 1000, num_processes: int = 20
+) -> float:
     """
     Make HTTP GET requests to the specified URL in parallel.
 
