@@ -7,6 +7,11 @@ def zeros_and_ones(zeros_and_ones: List[int]):
     and all ones appear at the end.
     :param zeros_and_ones: A list containing only ones and zeros
     :return: The rearranged list with all zeros at the beginning and all ones at the end.
+
+    Usage::
+
+    >>> zeros_and_ones([0,1,1,1,0])
+    [0, 0, 1, 1, 1]
     """
     zeros_count = zeros_and_ones.count(0)
     return [0] * zeros_count + [1] * (len(zeros_and_ones) - zeros_count)

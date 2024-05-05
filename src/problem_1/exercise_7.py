@@ -23,6 +23,11 @@ class Desktop(Computer):
     :param brand: The brand of the desktop computer.
     :param model: The model of the desktop computer.
     :param cpu_volume: The volume of the CPU in liters.
+
+    Usage::
+    >>> s = Desktop("Dell", "Power", 10)
+    >>> print(s)
+    Brand: Dell, Model: Power, CPU Volume: 10 L
     """
 
     def __init__(self, brand, model, cpu_volume):
@@ -43,6 +48,11 @@ class Laptop(Computer):
     :param brand: The brand of the laptop computer.
     :param model: The model of the laptop computer.
     :param battery_duration: The duration of the battery in hours.
+
+    Usage::
+    >>> l = Laptop("Dell", "Mini Power", 2)
+    >>> print(l)
+    Brand: Dell, Model: Mini Power, Battery Duration: 2 h
     """
 
     def __init__(self, brand, model, battery_duration):

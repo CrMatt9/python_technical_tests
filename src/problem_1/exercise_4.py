@@ -15,12 +15,12 @@ class CustomString(str):
     >>Hola mundo
     """
 
-    def __new__(cls, value: str):
+    def __new__(cls, value: str, verbose=True):
         clean_value = cls._clean_string(value)
         invalid_characters = cls._get_invalid_characters(
             value=value, clean_value=clean_value
         )
-        if invalid_characters:
+        if invalid_characters and verbose:
             warnings.warn(
                 f'The created instance can only contain characters from "a" to "z". The characters '
                 f"{invalid_characters} will be removed."
